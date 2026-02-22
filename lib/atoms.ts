@@ -12,6 +12,7 @@ export interface Service {
   duration: number; // in minutes
   basePrice: number;
   availableGenders: Gender[];
+  image: string;
 }
 
 export interface Style {

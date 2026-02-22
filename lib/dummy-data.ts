@@ -8,6 +8,7 @@ export const services: Service[] = [
     duration: 30,
     basePrice: 300,
     availableGenders: ['Male', 'Female', 'Unisex'],
+    image: "/style-classic-fade.jpg"
   },
   {
     id: 's2',
@@ -16,6 +17,7 @@ export const services: Service[] = [
     duration: 90,
     basePrice: 250,
     availableGenders: ['Female', 'Unisex'],
+    image: "/style-blonde.png"
   },
   {
     id: 's3',
@@ -24,6 +26,7 @@ export const services: Service[] = [
     duration: 60,
     basePrice: 350,
     availableGenders: ['Female', 'Unisex'],
+    image: "/style-waves.jpg"
   },
   {
     id: 's4',
@@ -32,6 +35,7 @@ export const services: Service[] = [
     duration: 60,
     basePrice: 350,
     availableGenders: ['Male', 'Female', 'Unisex'],
+    image: "/chair-massage-ladies.jpg"
   },
   {
     id: 's5',
@@ -40,6 +44,7 @@ export const services: Service[] = [
     duration: 45,
     basePrice: 300,
     availableGenders: ['Female', 'Unisex'],
+    image: "/classic-facial.jpeg"
   },
   {
     id: 's6',
@@ -48,6 +53,7 @@ export const services: Service[] = [
     duration: 30,
     basePrice: 250,
     availableGenders: ['Female', 'Unisex'],
+    image: "/soft-wax.jpeg"
   },
 ];
 

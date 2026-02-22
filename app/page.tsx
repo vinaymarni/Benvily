@@ -4,10 +4,10 @@ import { Header } from '@/components/header';
 import { GenderFilterToggle } from '@/components/gender-filter-toggle';
 import { Button } from '@/components/ui/button';
 import { useAtom } from 'jotai';
-import { genderAtom, selectedServiceAtom, selectedStyleAtom, Style } from '@/lib/atoms';
+import { genderAtom, selectedSalonAtom, selectedServiceAtom, selectedStyleAtom } from '@/lib/atoms';
 import Link from 'next/link';
 import { Scissors, Star, MapPin, Clock } from 'lucide-react';
-import { services, styles } from '@/lib/dummy-data';
+import { salons, services, styles } from '@/lib/dummy-data';
 import Image from 'next/image';
 import CardsCarousal from '@/components/commonComponents/CardsCarousal';
 import { styleSections } from '@/components/data';
@@ -23,6 +23,7 @@ function ProductCard({ style }: any) {
   }
   
   const route = useRouter();
+
   function onSelectStyle(){
     const service:any = getService();
     setSelectedService(service);
@@ -31,13 +32,13 @@ function ProductCard({ style }: any) {
       route.push("/services/booking/salon")
     }, 200);
   }
+
   return (
-    // <Link href="/services/booking/salon">
       <div onClick={()=>onSelectStyle()} className='group cursor-pointer flex flex-col '>
-        <div className='  cursor-pointer w-50 h-30 min-w-30 rounded-xl relative flex justify-center items-center overflow-hidden    '>
+        <div className='  cursor-pointer w-50 h-40 min-w-30 rounded-xl relative flex justify-center items-center overflow-hidden    '>
           <Image
             alt={style.name}
-            src={style.image}  
+            src={style.image}
             fill
             className=' object-fill rounded-sm transform transition duration-300 hover:scale-105  '
           />
@@ -47,9 +48,48 @@ function ProductCard({ style }: any) {
           </span>
         </div>
         <h3 className='  bottom-[6px] z-1 font-bold text-[12px] px-[4px] mt-[4px] '>{style.name}</h3>
-
       </div>
-    // </Link>
+  )
+}
+
+function SalonCard({ salon }: any) {
+  const [, setSelectedSalon] = useAtom(selectedSalonAtom);
+  // const getService = () => {
+  //   const list = services.filter((s) => s.id === salon.id) ?? []
+  //   return list.length > 0 ? list[0] : null
+  // }
+  
+  const route = useRouter();
+
+  function onSelectStyle(){
+    // const service:any = getService();
+    setSelectedSalon(salon);
+
+    setTimeout(()=>{
+      route.push("/services/booking/stylist")
+    }, 200);
+  }
+
+  const avalServices = salon.services.map((each:string) => styleSections[each].title )
+
+  return (
+      <div onClick={()=>onSelectStyle()} className='max-w-50 group cursor-pointer flex flex-col '>
+        <div className='  cursor-pointer w-50 h-40 min-w-50 rounded-xl relative flex justify-center items-center overflow-hidden    '>
+          <Image
+            alt={salon.name}
+            src={salon.image}
+            fill
+            className=' object-fill rounded-sm transform transition duration-300 hover:scale-105  '
+          />
+          <span className=' flex items-center gap-[2px] absolute bottom-[10px] right-[10px] z-1 bg-white rounded-sm text-[10px] px-[4px] font-bold '>
+            <Star className="h-3 w-3 fill-accent text-accent" />
+            {salon.rating}-({salon.reviews})
+          </span>
+        </div>
+        <h3 className='  bottom-[6px] font-bold text-[14px] px-[4px] mt-[4px] '>{salon.name}</h3>
+        <p className='font-semibold text-[12px] '>{salon.location}</p>
+        <p className='font-semibold text-[12px] text-wrap '>{avalServices.join(" / ")}</p>
+      </div>
   )
 }
 
@@ -92,6 +132,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services */}
+      <div className='mt-[2rem] px-[1rem] mx-[3%] rounded-b-3xl pb-[1rem]  '>
+        <h2 className='text-xl font-bold'>What you are looking for?</h2>
+        <CardsCarousal  
+          key={`CardsCarousal_`}
+          gap={40}
+          scrollSize={170}
+          containerClass='pt-[1rem] '
+          dataLength={services.length}
+          allCards={services.map((service) => {
+            return(
+              <div className='group cursor-pointer max-w-50 flex flex-col' key={`service_card_${service.id}`}>
+                <Image
+                  alt={service.name}
+                  src={service.image}
+                  width={100}
+                  height={100}
+                  className=' group-hover:shadow-xl cursor-pointer rounded-3xl w-[150px] h-[150px] min-w-[150px] '
+                />
+                <h3 className=' cursor-pointer font-bold text-[16px] text-center px-[4px] mt-[4px] '>{service.name}</h3>
+              </div>
+            )})}
+        />
+      </div>
+
+      {/* Salons */}
+      <div className='mt-[2rem] px-[1rem] mx-[3%] rounded-b-3xl pb-[1rem]  '>
+        <h2 className='text-xl font-bold'>Top Salons in Bangalore</h2>
+        <CardsCarousal  
+          key={`CardsCarousal_`}
+          gap={40}
+          scrollSize={170}
+          containerClass='pt-[1rem] '
+          dataLength={salons.length}
+          allCards={salons.map((salon) => {
+            return(
+              <SalonCard key={`salon_card_${salon.id}`} salon={salon} />
+            )})}
+        />
+      </div>
+
+      {/* Styles */}
       {sectionKeys.map((section:any)=>{
         const eachStyleSection = getDataList(section);
         const dataObj:any = styleSections[section];
