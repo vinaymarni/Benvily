@@ -4,22 +4,70 @@ import { Header } from '@/components/header';
 import { GenderFilterToggle } from '@/components/gender-filter-toggle';
 import { Button } from '@/components/ui/button';
 import { useAtom } from 'jotai';
-import { genderAtom } from '@/lib/atoms';
+import { genderAtom, selectedServiceAtom, selectedStyleAtom, Style } from '@/lib/atoms';
 import Link from 'next/link';
 import { Scissors, Star, MapPin, Clock } from 'lucide-react';
-import { styles } from '@/lib/dummy-data';
+import { services, styles } from '@/lib/dummy-data';
 import Image from 'next/image';
 import CardsCarousal from '@/components/commonComponents/CardsCarousal';
+import { styleSections } from '@/components/data';
+import { useRouter } from 'next/navigation';
+
+function ProductCard({ style }: any) {
+  const [,setSelectedService] = useAtom(selectedServiceAtom);
+  const [,setSelectedStyle] = useAtom(selectedStyleAtom);
+
+  const getService = () => {
+    const list = services.filter((s) => s.id === style.serviceId) ?? []
+    return list.length > 0 ? list[0] : null
+  }
+  
+  const route = useRouter();
+  function onSelectStyle(){
+    const service:any = getService();
+    setSelectedService(service);
+    setSelectedStyle(style);
+    setTimeout(()=>{
+      route.push("/services/booking/salon")
+    }, 200);
+  }
+  return (
+    // <Link href="/services/booking/salon">
+      <div onClick={()=>onSelectStyle()} className='group cursor-pointer flex flex-col '>
+        <div className='  cursor-pointer w-50 h-30 min-w-30 rounded-xl relative flex justify-center items-center overflow-hidden    '>
+          <Image
+            alt={style.name}
+            src={style.image}  
+            fill
+            className=' object-fill rounded-sm transform transition duration-300 hover:scale-105  '
+          />
+          <span className=' flex items-center gap-[2px] absolute bottom-[10px] right-[10px] z-1 bg-white rounded-sm text-[10px] px-[4px] font-bold '>
+            <Star className="h-3 w-3 fill-accent text-accent" />
+            {style.rating}
+          </span>
+        </div>
+        <h3 className='  bottom-[6px] z-1 font-bold text-[12px] px-[4px] mt-[4px] '>{style.name}</h3>
+
+      </div>
+    // </Link>
+  )
+}
 
 export default function Home() {
   const [gender] = useAtom(genderAtom);
+  const sectionKeys = Object.keys(styleSections);
+
+  const getDataList = (section: string) => {
+    return styles.filter((s) => s.serviceId === section && (gender === null || s.availableGenders.includes(gender)))
+  }
   
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="border-b border-border bg-gradient-to-br from-background to-muted/30">
+      <section className="border-b border-border bg-gradient-to-r from-gray-200 via-white to-gray-100
+            bg-[length:200%_200%] animate-floatBg">
         <div className="container mx-auto px-4 py-20 md:py-32">
           <div className="max-w-2xl">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
@@ -44,24 +92,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Styles Grid */}
-      <CardsCarousal  
-        gap={20}
-        scrollSize={100}
-        containerClass='pt-[2rem] '
-        dataLength={styles.length}
-        allCards={styles.map((style) => (
-          <div key={style.id} className='cursor-pointer w-30 h-30 min-w-30 rounded-sm relative flex justify-center items-center   transform transition duration-300 hover:scale-105 overflow-hidden '>
-            <Image
-              alt={style.name}
-              src={style.image} 
-              fill
-              className=' rounded-sm '
+      {sectionKeys.map((section:any)=>{
+        const eachStyleSection = getDataList(section);
+        const dataObj:any = styleSections[section];
+        if(eachStyleSection.length === 0) return;
+        const genderText = 
+            gender === "Male" ? ` for Gents(${eachStyleSection.length})` :
+            gender === "Female" ? ` for Ladies(${eachStyleSection.length})`:
+            gender === "Unisex" ? ` for Unisex(${eachStyleSection.length})` : ""
+        return(
+          <div key={`CardsCarousal_main_${section}`} className='mt-[2rem] px-[1rem] mx-[3%] rounded-b-3xl pb-[1rem] bg-gradient-to-t from-gray-200 to-transparent '>
+            <h2 className='text-xl font-bold'>{dataObj.title}{genderText}</h2>
+            <CardsCarousal  
+              key={`CardsCarousal_${section}`}
+              gap={30}
+              scrollSize={100}
+              containerClass='pt-[1rem] '
+              dataLength={eachStyleSection.length}
+              allCards={eachStyleSection.map((style) => (
+                <ProductCard key={`card_${section}_${style.id}`} style={style} />
+              ))}
             />
-            <span className='absolute bottom-[6px] z-1 font-bold bg-white rounded-sm text-[12px] px-[4px]  '>{style.name}</span>
           </div>
-        ))}
-      />
+        )
+      })}
 
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-20">
