@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/button';
 import { useAtom } from 'jotai';
 import { genderAtom, selectedSalonAtom, selectedServiceAtom, selectedStyleAtom } from '@/lib/atoms';
 import Link from 'next/link';
-import { Scissors, Star, MapPin, Clock } from 'lucide-react';
-import { salons, services, styles } from '@/lib/dummy-data';
+import { Scissors, Star, MapPin, Clock, Check } from 'lucide-react';
+import { plans, salons, services, styles } from '@/lib/dummy-data';
 import Image from 'next/image';
 import CardsCarousal from '@/components/commonComponents/CardsCarousal';
 import { styleSections } from '@/components/data';
@@ -93,6 +93,92 @@ function SalonCard({ salon }: any) {
   )
 }
 
+function ServiceCard({ service }: any) {
+  const [, setSelectedService] = useAtom(selectedServiceAtom);
+  // const getService = () => {
+  //   const list = services.filter((s) => s.id === salon.id) ?? []
+  //   return list.length > 0 ? list[0] : null
+  // }
+  
+  const route = useRouter();
+
+  function onSelectStyle(){
+    // const service:any = getService();
+    setSelectedService(service);
+
+    setTimeout(()=>{
+      route.push("/services/booking/styles")
+    }, 200);
+  }
+
+  return (
+      <div onClick={()=>onSelectStyle()} className='group cursor-pointer max-w-50 flex flex-col' key={`service_card_${service.id}`}>
+                <Image
+                  alt={service.name}
+                  src={service.image}
+                  width={100}
+                  height={100}
+                  className=' group-hover:shadow-xl cursor-pointer rounded-3xl w-[150px] h-[150px] min-w-[150px] '
+                />
+                <h3 className=' cursor-pointer font-bold text-[16px] text-center px-[4px] mt-[4px] '>{service.name}</h3>
+              </div>
+  )
+}
+
+function PlanCard({ plan }: any) {
+
+  return (
+      <div
+              key={plan.name}
+              className={`relative flex flex-col rounded-lg border p-8 transition-shadow hover:shadow-lg ${
+                plan.highlighted
+                  ? "border-accent bg-card shadow-md"
+                  : "border-border bg-card"
+              }`}
+            >
+              {plan.highlighted && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-4 py-1 text-xs font-semibold text-accent-foreground">
+                  Most Popular
+                </span>
+              )}
+              <h3 className="font-serif text-xl font-semibold text-foreground">
+                {plan.name}
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {plan.description}
+              </p>
+              <div className="mt-6">
+                <span className="font-serif text-4xl font-bold text-foreground">
+                  ₹{plan.price}/-
+                </span>
+                <span className="ml-1 text-sm text-muted-foreground">
+                  / session
+                </span>
+              </div>
+              <ul className="mt-8 flex flex-1 flex-col gap-3">
+                {plan.features.map((feature:any) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
+                    <span className="text-sm text-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/services/booking/salon" className="mt-8">
+                <Button
+                  className={`w-full ${
+                    plan.highlighted
+                      ? "bg-accent text-accent-foreground hover:bg-accent/90"
+                      : "bg-primary text-primary-foreground hover:bg-primary/90"
+                  }`}
+                >
+                  Book This Package
+                </Button>
+              </Link>
+            </div>
+  )
+}
+
+
 export default function Home() {
   const [gender] = useAtom(genderAtom);
   const sectionKeys = Object.keys(styleSections);
@@ -133,7 +219,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <div className='mt-[2rem] px-[1rem] mx-[3%] rounded-b-3xl pb-[1rem]  '>
+      <div className='mt-8 px-4 mx-[3%] rounded-b-3xl pb-4  '>
         <h2 className='text-xl font-bold'>What you are looking for?</h2>
         <CardsCarousal  
           key={`CardsCarousal_`}
@@ -143,18 +229,16 @@ export default function Home() {
           dataLength={services.length}
           allCards={services.map((service) => {
             return(
-              <div className='group cursor-pointer max-w-50 flex flex-col' key={`service_card_${service.id}`}>
-                <Image
-                  alt={service.name}
-                  src={service.image}
-                  width={100}
-                  height={100}
-                  className=' group-hover:shadow-xl cursor-pointer rounded-3xl w-[150px] h-[150px] min-w-[150px] '
-                />
-                <h3 className=' cursor-pointer font-bold text-[16px] text-center px-[4px] mt-[4px] '>{service.name}</h3>
-              </div>
+              <ServiceCard service={service} />
             )})}
         />
+      </div>
+
+      {/* combos plans */}
+      <div className="mt-16 grid gap-8 md:grid-cols-3 px-4 ">
+          {plans.map((plan) => (
+            <PlanCard plan={plan} />
+          ))}
       </div>
 
       {/* Salons */}

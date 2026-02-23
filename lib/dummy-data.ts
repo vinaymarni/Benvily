@@ -656,3 +656,45 @@ export const mockUsers: User[] = [
     createdAt: '2025-01-01',
   },
 ];
+
+export const plans = [
+  {
+    name: "Essential",
+    price: "450",
+    description: "Perfect for a quick refresh",
+    features: [
+      "Precision Haircut",
+      "Blow Dry & Styling",
+      "Scalp Massage",
+      "Complimentary Beverage",
+    ],
+    highlighted: false,
+  },
+  {
+    name: "Luxe",
+    price: "220",
+    description: "Our most popular package",
+    features: [
+      "Haircut & Styling",
+      "Deep Conditioning Treatment",
+      "Express Facial",
+      "Hand & Nail Care",
+      "Complimentary Refreshments",
+    ],
+    highlighted: true,
+  },
+  {
+    name: "Bridal Suite",
+    price: "650",
+    description: "Your complete bridal experience",
+    features: [
+      "Bridal Hair & Makeup",
+      "Trial Session Included",
+      "Luxury Facial Treatment",
+      "Full Body Spa",
+      "Champagne & Treats",
+      "Bridesmaid Discounts",
+    ],
+    highlighted: false,
+  },
+]
