@@ -229,7 +229,7 @@ export default function Home() {
           dataLength={services.length}
           allCards={services.map((service) => {
             return(
-              <ServiceCard service={service} />
+              <ServiceCard key={`${service.id}_card`} service={service} />
             )})}
         />
       </div>
@@ -237,7 +237,7 @@ export default function Home() {
       {/* combos plans */}
       <div className="mt-16 grid gap-8 md:grid-cols-3 px-4 ">
           {plans.map((plan) => (
-            <PlanCard plan={plan} />
+            <PlanCard key={`${plan.name}_plan_card`} plan={plan} />
           ))}
       </div>
 
