@@ -14,14 +14,16 @@ import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
 
 export default function BookingStylesPage() {
-  const [selectedService] = useAtom(selectedServiceAtom);
-  const [selectedStyle, setSelectedStyle] = useAtom(selectedStyleAtom);
+  const [selectedService] = useAtom<any>(selectedServiceAtom);
+  const [selectedStyle, setSelectedStyle] = useAtom<any>(selectedStyleAtom);
 
   let filteredStyles = styles;
 
   if (selectedService) {
     filteredStyles = filteredStyles.filter((s) => s.serviceId === selectedService.id);
   }
+
+  const endPoint = selectedStyle ? `${selectedStyle.serviceId}_${selectedStyle.id}_${selectedStyle.name.replaceAll(" ", "-")}` : "";
 
   return (
     <div className="min-h-screen bg-background">
@@ -74,10 +76,11 @@ export default function BookingStylesPage() {
                 <p className="text-sm text-muted-foreground">Next:</p>
                 <p className="font-semibold">Select Salon</p>
               </div>
-              <Link href="/services/booking/salon">
+              {/* <Link href="/services/booking/salon"> */}
+              <Link href={`/services/booking/styles/${endPoint}/`}>
                 <Button className="gap-2">
                   Continue <ChevronRight className="h-4 w-4" />
-                </Button>
+                </Button> 
               </Link>
             </div>
           </div>

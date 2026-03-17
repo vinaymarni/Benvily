@@ -1,5 +1,6 @@
 import { Star, Clock, DollarSign } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 interface ServiceHeroProps {
   service: {
@@ -74,12 +75,14 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
           </div>
 
           {/* CTA Button */}
-          <Button
-            size="lg"
-            className="relative h-14 px-8 text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-          >
-            Continue Booking
-          </Button>
+          <Link href="/services/booking/salon">
+            <Button
+              size="lg"
+              className="relative h-14 px-8 text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              Continue Booking 
+            </Button>
+          </Link>
 
           {/* Scroll Indicator */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
