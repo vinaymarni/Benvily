@@ -50,11 +50,7 @@ const relatedServices = [
   { id: 'quiff', name: 'Quiff', category: 'Hair Style', price: 850, image: '/related-4.jpg' },
 ];
 
-export default function ServiceDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function ServiceDetailPage(props: any) {
   const [selectedService] = useState(exampleService);
 
   const handleContinueBooking = () => {
@@ -62,7 +58,11 @@ export default function ServiceDetailPage({
     console.log('Continue to salon selection');
   };
 
-  console.log(params)
+  const searchParams = await props.params;
+  const id = searchParams.slug;
+
+  console.log(id)
+
 
   return (
     <main className="min-h-screen bg-background">
