@@ -14,6 +14,7 @@ import { stylists } from '@/lib/dummy-data';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+import { Footer } from '@/components/footer';
 
 export default function BookingStylistPage() {
   const [selectedService] = useAtom(selectedServiceAtom);
@@ -95,6 +96,8 @@ export default function BookingStylistPage() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 }

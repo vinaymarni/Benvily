@@ -13,6 +13,7 @@ import { salons } from '@/lib/dummy-data';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+import { Footer } from '@/components/footer';
 
 export default function BookingSalonPage() {
   const [selectedService] = useAtom(selectedServiceAtom);
@@ -86,6 +87,8 @@ export default function BookingSalonPage() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 }

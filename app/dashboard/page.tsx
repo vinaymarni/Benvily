@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { Calendar, Clock, MapPin, LogOut, Plus } from 'lucide-react';
+import { Footer } from '@/components/footer';
 
 export default function DashboardPage() {
   const [currentUser] = useAtom(currentUserAtom);
@@ -185,6 +186,8 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

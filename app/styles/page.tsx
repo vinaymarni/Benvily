@@ -9,6 +9,7 @@ import { styles } from '@/lib/dummy-data';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+import { Footer } from '@/components/footer';
 
 export default function StylesPage() {
   const [gender] = useAtom(genderAtom);
@@ -88,6 +89,8 @@ export default function StylesPage() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 }

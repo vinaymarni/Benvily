@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { useAtom } from 'jotai';
 import { currentUserAtom, isAuthenticatedAtom } from '@/lib/atoms';
 import { useRouter } from 'next/navigation';
+import { Footer } from '@/components/footer';
 
 export default function RegisterPage() {
   const [, setCurrentUser] = useAtom(currentUserAtom);
@@ -153,6 +154,8 @@ export default function RegisterPage() {
           </CardContent>
         </Card>
       </div>
+
+      <Footer />
     </div>
   );
 }

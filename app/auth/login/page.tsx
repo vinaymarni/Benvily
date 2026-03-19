@@ -11,6 +11,7 @@ import { useAtom } from 'jotai';
 import { currentUserAtom, isAuthenticatedAtom } from '@/lib/atoms';
 import { mockUsers } from '@/lib/dummy-data';
 import { useRouter } from 'next/navigation';
+import { Footer } from '@/components/footer';
 
 export default function LoginPage() {
   const [, setCurrentUser] = useAtom(currentUserAtom);
@@ -106,6 +107,8 @@ export default function LoginPage() {
           </CardContent>
         </Card>
       </div>
+
+      <Footer />
     </div>
   );
 }

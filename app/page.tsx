@@ -12,6 +12,7 @@ import Image from 'next/image';
 import CardsCarousal from '@/components/commonComponents/CardsCarousal';
 import { styleSections } from '@/components/data';
 import { useRouter } from 'next/navigation';
+import { Footer } from '@/components/footer';
 
 function ProductCard({ style }: any) {
   const [,setSelectedService] = useAtom(selectedServiceAtom);
@@ -363,11 +364,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-muted/20">
-        <div className="container mx-auto px-4 py-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2025 Benvily. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
+
+
     </div>
   );
 }

@@ -15,6 +15,7 @@ import { timeSlots } from '@/lib/dummy-data';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+import { Footer } from '@/components/footer';
 
 export default function BookingSlotPage() {
   const [selectedService] = useAtom(selectedServiceAtom);
@@ -99,6 +100,8 @@ export default function BookingSlotPage() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 }

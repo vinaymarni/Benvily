@@ -12,6 +12,7 @@ import { styles } from '@/lib/dummy-data';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+import { Footer } from '@/components/footer';
 
 export default function BookingStylesPage() {
   const [selectedService] = useAtom<any>(selectedServiceAtom);
@@ -86,6 +87,8 @@ export default function BookingStylesPage() {
           </div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 }

@@ -766,7 +766,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: 'The Classic Fade is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -779,8 +779,6 @@ export const exampleService = [
     recommendedFrequency: '4-6 weeks',
     images: [
       '/style-classic-fade.jpg',
-      '/service-2.jpg',
-      '/service-3.jpg',
     ],
     beforeImage: '/before.jpg',
     afterImage: '/style-classic-fade.jpg',
@@ -795,7 +793,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: 'The Textured Top is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -810,9 +808,6 @@ export const exampleService = [
     recommendedFrequency: '4-6 weeks',
     images: [
       '/style-textured.jpg',
-      '/service-2.jpg',
-      '/service-3.jpg',
-      '/service-4.jpg',
     ],
     beforeImage: '/before.jpg',
     afterImage: '/style-textured.jpg',
@@ -827,7 +822,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: 'The Luxury Bob is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -842,7 +837,6 @@ export const exampleService = [
     recommendedFrequency: '4-6 weeks',
     images: [
       '/style-bob.jpg',
-      '/service-2.jpg',
     ],
     beforeImage: '/before.jpg',
     afterImage: '/style-bob.jpg',
@@ -857,7 +851,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: 'The Luxury Bob is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -872,7 +866,6 @@ export const exampleService = [
     recommendedFrequency: '4-6 weeks',
     images: [
       '/style-bob.jpg',
-      '/service-2.jpg',
     ],
     beforeImage: '/before.jpg',
     afterImage: '/style-bob.jpg',
@@ -887,7 +880,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: 'The Blonde Highlights is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -916,7 +909,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: 'The Bridal Styling is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -945,7 +938,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: 'The Evening Waves is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -974,7 +967,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",    
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -1003,7 +996,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",  
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -1032,7 +1025,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -1061,7 +1054,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -1090,7 +1083,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -1119,7 +1112,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -1148,7 +1141,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -1177,7 +1170,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -1206,7 +1199,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -1235,7 +1228,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",    
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',
@@ -1264,7 +1257,7 @@ export const exampleService = [
     reviewCount: 328,
     duration: '45 mins',
     price: 1200,
-    description: 'The Wolf Cut is a modern, edgy hairstyle that combines the best of both mullets and shag cuts. It features longer layers on top with volume and movement, shorter sides, and a distinctive disconnected, textured look. Perfect for those seeking a bold, trendy transformation.',
+    description: "",    
     benefits: [
       'Modern trendy look that turns heads',
       'Versatile styling options - sleek or textured',

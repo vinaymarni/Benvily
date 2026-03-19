@@ -1,6 +1,5 @@
 // 'use client';
 
-// import { useState } from 'react';
 import ServiceHero from '@/components/service/ServiceHero';
 import ServiceGallery from '@/components/service/ServiceGallery';
 import ServiceAbout from '@/components/service/ServiceAbout';
@@ -9,13 +8,9 @@ import ServiceBenefits from '@/components/service/ServiceBenefits';
 import BeforeAfterSection from '@/components/service/BeforeAfterSection';
 import RelatedServices from '@/components/service/RelatedServices';
 import ContinueBookingButton from '@/components/service/ContinueBookingButton';
-import { exampleService, relatedServices } from '@/lib/dummy-data';
+import { exampleService, relatedServices, styles } from '@/lib/dummy-data';
 
 export default async function ServiceDetailPage(props: any) {
-  // const [selectedService] = useState(exampleService);
-
-
-
   const searchParams = await props.params;
   const id = searchParams.slug;
 
@@ -24,7 +19,7 @@ export default async function ServiceDetailPage(props: any) {
 
   const selectedService:any = exampleService.filter((each: any)=>each.serviceId == serviceId && each.styleId == styleId)[0];
 
-  console.log(selectedService)
+  const relServices = styles.filter((s) => s.serviceId === serviceId);
 
   if(!selectedService) return <main className="min-h-screen bg-background">Not Found</main>;
 
@@ -62,6 +57,7 @@ export default async function ServiceDetailPage(props: any) {
       </section>
 
       {/* Before/After Section */}
+      {serviceId != "s4" &&
       <section className="bg-white py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <BeforeAfterSection
@@ -70,11 +66,12 @@ export default async function ServiceDetailPage(props: any) {
           />
         </div>
       </section>
+      }
 
       {/* Related Services */}
       <section className="bg-background py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <RelatedServices services={relatedServices} />
+          <RelatedServices services={relServices} category={selectedService.category} />
         </div>
       </section>
 
