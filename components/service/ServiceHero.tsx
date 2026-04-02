@@ -1,4 +1,4 @@
-import { Star, Clock, DollarSign } from 'lucide-react';
+import { Star, Clock, BadgeIndianRupee } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -12,6 +12,7 @@ interface ServiceHeroProps {
     price: number;
   };
 }
+
 
 export default function ServiceHero({ service }: ServiceHeroProps) {
   return (
@@ -67,7 +68,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
               <span className="font-medium text-foreground">{service.duration}</span>
             </div>
             <div className="flex items-center gap-2 rounded-lg bg-white px-4 py-3 shadow-sm">
-              <DollarSign className="h-5 w-5 text-accent" />
+              <BadgeIndianRupee className="h-5 w-5 text-accent" />
               <span className="font-medium text-foreground">
                 From ₹{service.price.toLocaleString()}
               </span>
@@ -108,3 +109,4 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
     </section>
   );
 }
+

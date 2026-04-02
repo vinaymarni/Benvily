@@ -28,8 +28,7 @@ export default function PaymentPage() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [isConfirmed, setIsConfirmed] = useState(false);
 
-  const handlePayment = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const submit = async () => {
     setIsProcessing(true);
 
     // Simulate payment processing
@@ -37,6 +36,11 @@ export default function PaymentPage() {
       setIsProcessing(false);
       setIsConfirmed(true);
     }, 2000);
+  };
+
+  const handlePayment = async (e: React.FormEvent) => {
+    e.preventDefault();
+    submit();
   };
 
   if (isConfirmed) {
@@ -178,10 +182,22 @@ export default function PaymentPage() {
                     className="w-full"
                     disabled={isProcessing}
                     size="lg"
+                    
                   >
                     {isProcessing ? 'Processing...' : 'Confirm Booking'}
                   </Button>
                 </form>
+
+                <p className='text-center my-[20px] font-bold '>--- OR ---</p>
+
+                <Button
+                    className="w-full"
+                    size="lg"
+                    onClick={()=>submit()}
+                    disabled={isProcessing}
+                >
+                  {isProcessing ? 'Processing...' : 'Book The Slot'}
+                </Button>
               </CardContent>
             </Card>
           </div>
