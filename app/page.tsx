@@ -48,7 +48,7 @@ function ProductCard({ style }: any) {
             {style.rating}
           </span>
         </div>
-        <h3 className='  bottom-[6px] z-1 font-bold text-[12px] px-[4px] mt-[4px] '>{style.name}</h3>
+        <h3 className='  bottom-1.5 z-1 font-bold text-[12px] px-[4px] mt-[4px] '>{style.name}</h3>
       </div>
   )
 }
@@ -67,7 +67,8 @@ function SalonCard({ salon }: any) {
     setSelectedSalon(salon);
 
     setTimeout(()=>{
-      route.push("/services/booking/stylist")
+      // route.push("/services/booking/stylist")
+      route.push("/services/booking/slot");
     }, 200);
   }
 
@@ -243,7 +244,7 @@ export default function Home() {
       </div>
 
       {/* Salons */}
-      <div className='mt-[2rem] px-[1rem] mx-[3%] rounded-b-3xl pb-[1rem]  '>
+      <div className='mt-8 px-8 mx-[3%] rounded-b-3xl pb-4  '>
         <h2 className='text-xl font-bold'>Top Salons in Bangalore</h2>
         <CardsCarousal  
           key={`CardsCarousal_`}
@@ -365,8 +366,6 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
-
-
     </div>
   );
 }

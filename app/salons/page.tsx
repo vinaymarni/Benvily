@@ -62,7 +62,8 @@ export default function SalonsPage() {
                 <p className="text-sm text-muted-foreground">Selected:</p>
                 <p className="font-semibold">{selectedSalon.name}</p>
               </div>
-              <Link href="/services/booking/stylist">
+              {/* <Link href="/services/booking/stylist"> */}
+              <Link href="/services/booking/slot">
                 <Button className="gap-2">
                   Continue <ChevronRight className="h-4 w-4" />
                 </Button>

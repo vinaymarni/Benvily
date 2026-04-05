@@ -38,7 +38,7 @@ export default function PaymentPage() {
     }, 2000);
   };
 
-  const handlePayment = async (e: React.FormEvent) => {
+  const handlePayment = async (e: any) => {
     e.preventDefault();
     submit();
   };
