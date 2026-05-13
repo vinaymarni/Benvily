@@ -68,7 +68,7 @@ export default function BookingSalonPage() {
               salon={selectedSalon}
             />
           </div>
-        </div>
+        </div> 
 
         {/* Bottom CTA */}
         {selectedSalon && (
