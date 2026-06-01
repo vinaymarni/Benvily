@@ -1,62 +1,5 @@
 import { Service, Style, Salon, Stylist, TimeSlot, Booking, User } from './atoms';
 
-export const services: Service[] = [
-  {
-    id: 's1',
-    name: 'Haircut',
-    description: 'Professional haircut tailored to your style',
-    duration: 30,
-    basePrice: 300,
-    availableGenders: ['Male', 'Female', 'Unisex'],
-    image: "/style-classic-fade.jpg"
-  },
-  {
-    id: 's2',
-    name: 'Coloring',
-    description: 'Expert hair coloring and dyeing services',
-    duration: 90,
-    basePrice: 250,
-    availableGenders: ['Female', 'Unisex'],
-    image: "/style-blonde.png"
-  },
-  {
-    id: 's3',
-    name: 'Styling',
-    description: 'Professional styling for special occasions',
-    duration: 60,
-    basePrice: 350,
-    availableGenders: ['Female', 'Unisex'],
-    image: "/style-waves.jpg"
-  },
-  {
-    id: 's4',
-    name: 'Massage',
-    description: 'Relaxing massage therapy',
-    duration: 60,
-    basePrice: 350,
-    availableGenders: ['Male', 'Female', 'Unisex'],
-    image: "/chair-massage-ladies.jpg"
-  },
-  {
-    id: 's5',
-    name: 'Facial',
-    description: 'Rejuvenating facial treatments',
-    duration: 45,
-    basePrice: 300,
-    availableGenders: ['Female', 'Unisex'],
-    image: "/classic-facial.jpeg"
-  },
-  {
-    id: 's6',
-    name: 'Waxing',
-    description: 'Professional waxing services',
-    duration: 30,
-    basePrice: 250,
-    availableGenders: ['Female', 'Unisex'],
-    image: "/soft-wax.jpeg"
-  },
-];
-
 export const allStyles: any = {
   Haircut:[
       {
@@ -280,6 +223,63 @@ export const allStyles: any = {
     },
   ]
 }
+
+export const services: Service[] = [
+  {
+    id: 's1',
+    name: 'Haircut',
+    description: 'Professional haircut tailored to your style',
+    duration: 30,
+    basePrice: 300,
+    availableGenders: ['Male', 'Female', 'Unisex'],
+    image: "/style-classic-fade.jpg"
+  },
+  {
+    id: 's2',
+    name: 'Coloring',
+    description: 'Expert hair coloring and dyeing services',
+    duration: 90,
+    basePrice: 250,
+    availableGenders: ['Female', 'Unisex'],
+    image: "/style-blonde.png"
+  },
+  {
+    id: 's3',
+    name: 'Styling',
+    description: 'Professional styling for special occasions',
+    duration: 60,
+    basePrice: 350,
+    availableGenders: ['Female', 'Unisex'],
+    image: "/style-waves.jpg"
+  },
+  {
+    id: 's4',
+    name: 'Massage',
+    description: 'Relaxing massage therapy',
+    duration: 60,
+    basePrice: 350,
+    availableGenders: ['Male', 'Female', 'Unisex'],
+    image: "/chair-massage-ladies.jpg"
+  },
+  {
+    id: 's5',
+    name: 'Facial',
+    description: 'Rejuvenating facial treatments',
+    duration: 45,
+    basePrice: 300,
+    availableGenders: ['Female', 'Unisex'],
+    image: "/classic-facial.jpeg"
+  },
+  {
+    id: 's6',
+    name: 'Waxing',
+    description: 'Professional waxing services',
+    duration: 30,
+    basePrice: 250,
+    availableGenders: ['Female', 'Unisex'],
+    image: "/soft-wax.jpeg"
+  },
+];
 
 export const styles: Style[] = [
   {
